@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grocery Store Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(7, 28, 66);;
+            text-align: center;
+            background-image: url('imgs/backgruond.jpg');
+        }
+        .display {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background:rgb(2, 78, 90);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border: 3px solid#f8e003;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        input, select{
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(211, 247, 8);
+            color: rgb(12, 12, 12);
+            border: 3px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+        
+<div class="display">
+    <h2 style="color: aliceblue;"><u>GROCERY ORDER FORM </u>🛂</h2>
+    <form id="orderForm" onsubmit="handleSubmit(event)">
+        
+        <label style="color: aliceblue;">Full Name:</label>
+        <input type="text" required>
+
+
+        <label style="color: aliceblue;">Phone Number:</label>
+        <input type="number" required>
+
+        <label style="color: aliceblue;">Address:</label>
+        <input type="text" required>
+        
+        <label style="color: aliceblue;">City: </label>
+        <input type="text" required>
+
+        <label style="color: aliceblue;">Pin Code: </label>
+        <input type="number" required>
+    
+        <h3> PAYMENT METHOD </h3>
+        <button type="submit">CASE ON DILEVERY</button>
+        <br>
+        <br>
+        <button type="button" onclick="goToCard()">PAY WITH CARD</button>
+    </form>
+</div>
+<footer style="text-align:center;color: aliceblue;font-size: 25px;">managed by - @dharmesh_77_ </footer>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+       const form = event.target;
+        if (form.checkValidity()) {
+            alert("Your order is placed !! THANKS FOR VISITING 🙏");
+            form.reset();
+        } else {
+            alert("Please fill in all required details before payment.");
+            form.reportValidity();
+        }
+    }
+
+    function goToCard() {
+        const form = document.getElementById("orderForm");
+        if (form.checkValidity()) {
+            window.location.href = "pymt.html";
+        } else {
+            alert("fill the details please..");
+            form.reportValidity();
+        }
+    }
+</script>
+
+</body>
+</html>

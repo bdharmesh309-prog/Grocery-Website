@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+        <style>
+.card 
+    { 
+        width: 340px;
+        height: 300px;
+        margin: auto;
+        background-color: rgb(2, 78, 90);
+        border: 4px solid #f8e003;
+        border-radius: 12px;
+        padding: 24px;
+        display: inline-block;
+        box-shadow: 0 8px 24px rgba(0, 0, 0.06);
+        margin-top: 10px;
+        text-align: center;
+        font-size: medium;
+    }
+     
+
+input 
+    {
+         width: 100%;
+         margin-bottom: 10px;
+         padding: 10px; 
+         box-sizing: border-box;
+     }
+
+button
+     { 
+        width: 100%;
+        padding: 10px; 
+        background-color: #28a745; 
+        color: white; 
+        border: none;
+     }
+     body
+     {
+        font-family: Arial, sans-serif;
+        background-color:rgb(7, 28, 66);;
+        text-align: center;
+        background-image: url('imgs/backgruond.jpg');
+     }
+
+
+        </style>
+        <body>
+
+       <div class="card">
+    <form id="paymentForm" onsubmit="handleSubmit2(event)" style="text-align: center;">
+        <h3 style="color: aliceblue;">PAY WITH CARD</h3>
+        <input type="text" placeholder="Card Number" required>
+        <input type="text" placeholder="Cardholder Name" required>
+        <input type="date" placeholder="MM/YY" required>
+        <input type="number" placeholder="amount" required>
+        <button>Pay Now</button>
+    </form>
+</div>
+
+<br>
+<br>
+<br>
+
+<script>
+    
+    function handleSubmit2(event) {
+        event.preventDefault();
+       const form = event.target;
+        if (form.checkValidity()) {
+            alert("Your order is placed !! THANKS FOR VISITING 🙏");
+            form.reset();
+        } else {
+            alert("Please fill in all details before payment.");
+            form.reportValidity();
+        }
+    }
+</script>
+    </body>
+    
+</html>
